@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_social_ui/screens/home_screen.dart';
 import 'package:flutter_social_ui/widgets/curve_clipper.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -65,20 +66,24 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
               ),
               SizedBox(height: 40.0),
-              Container(
-                margin: EdgeInsets.symmetric(horizontal: 60.0),
-                alignment: Alignment.center,
-                height: 45.0,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10.0),
-                    color: Theme.of(context).primaryColor),
-                child: Text(
-                  "Login",
-                  style: TextStyle(
-                      fontWeight: FontWeight.w600,
-                      fontSize: 22.0,
-                      letterSpacing: 1.5,
-                      color: Colors.white),
+              GestureDetector(
+                onTap: () => Navigator.pushReplacement(
+                    context, MaterialPageRoute(builder: (_) => HomeScreen())),
+                child: Container(
+                  margin: EdgeInsets.symmetric(horizontal: 60.0),
+                  alignment: Alignment.center,
+                  height: 45.0,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10.0),
+                      color: Theme.of(context).primaryColor),
+                  child: Text(
+                    "Login",
+                    style: TextStyle(
+                        fontWeight: FontWeight.w600,
+                        fontSize: 22.0,
+                        letterSpacing: 1.5,
+                        color: Colors.white),
+                  ),
                 ),
               ),
               Expanded(
