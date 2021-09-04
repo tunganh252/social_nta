@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_social_ui/data/data.dart';
 import 'package:flutter_social_ui/models/user_model.dart';
+import 'package:flutter_social_ui/widgets/custom_drawer.dart';
 import 'package:flutter_social_ui/widgets/following_users.dart';
 import 'package:flutter_social_ui/widgets/posts_carousel.dart';
 
@@ -28,7 +29,6 @@ class _HomeScreenState extends State<HomeScreen>
         brightness: Brightness.light,
         backgroundColor: Colors.white,
         iconTheme: IconThemeData(color: Theme.of(context).primaryColor),
-        leading: IconButton(icon: Icon(Icons.menu), onPressed: () {}),
         title: Text(
           "NTA SOCIAL",
           style: TextStyle(
@@ -44,6 +44,7 @@ class _HomeScreenState extends State<HomeScreen>
           tabs: [Tab(text: "Trending"), Tab(text: "Latest")],
         ),
       ),
+      drawer: CustomDrawer(),
       body: ListView(
         children: [
           FollowingUser(),
